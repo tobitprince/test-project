@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Your Tweets</h2>
+    <form method="POST" action="/add_tweet">
+        <input type="text" name="tweet" required maxlength="280">
+        <button type="submit">Add Tweet</button>
+    </form>
+    <ul>
+        {% for tweet in tweets %}
+            <li>{{ tweet[0] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Logout</a>
+</body>
+</html>
